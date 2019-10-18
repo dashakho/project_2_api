@@ -2,6 +2,7 @@
 
 class FactsController < ApplicationController
 # ProtectedController
+# ApplicationController
   before_action :set_fact, only: %i[show update destroy]
 
   # GET /facts
