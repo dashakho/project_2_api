@@ -6,8 +6,7 @@ curl "http://localhost:4741/facts" \
   --data '{
     "fact": {
         "category": "'"${CATEGORY}"'",
-        "level": "'"${LEVEL}"'",
-        "user_id": "'"${ID}"'"
+        "level": "'"${LEVEL}"'"
       }
    }'
 
