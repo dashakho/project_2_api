@@ -39,6 +39,11 @@ class FactsController < ProtectedController
     end
   end
 
+
+  # def edit
+  # @fact = Fact.find(params[:id])
+  # end
+
   # DELETE /facts/1
   def destroy
     @fact.destroy
