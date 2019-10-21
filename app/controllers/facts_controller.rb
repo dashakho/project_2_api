@@ -6,16 +6,16 @@ class FactsController < ProtectedController
 
   # GET /facts
   def index
-    @facts = Fact.all
+    @facts = current_user.facts
     # @facts = current_user.facts
     render json: @facts
   end
 
   # GET /facts/1
   def show
-    render json: Fact.find(params[:id])
+    # render json: Fact.find(params[:id])
     # render json: current_user.facts.find(params[:id])
-    # render json: @fact
+    render json: @fact
   end
 
   # POST /facts
@@ -50,7 +50,7 @@ class FactsController < ProtectedController
     head :no_content
   end
 
-  # private
+  private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_fact
@@ -60,8 +60,8 @@ class FactsController < ProtectedController
 
   # Only allow a trusted parameter "white list" through.
   def fact_params
-    params.require(:fact).permit(:category, :level, :user_id)
+    params.require(:fact).permit(:category, :level, :user)
     # params.require(:fact).permit(:category, :level)
   end
-  private :set_fact, :fact_params
+  # private :set_fact, :fact_params
 end
