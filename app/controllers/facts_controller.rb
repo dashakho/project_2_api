@@ -14,8 +14,8 @@ class FactsController < ProtectedController
   # GET /facts/1
   def show
     # render json: Fact.find(params[:id])
-    # render json: current_user.facts.find(params[:id])
-    render json: @fact
+    render json: current_user.facts.find(params[:id])
+    # render json: @fact
   end
 
   # POST /facts
